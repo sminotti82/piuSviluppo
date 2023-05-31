@@ -1,0 +1,177 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;
+}
+.containerTodo{
+    width: 90%;
+    height: 80vh;
+    margin: 5vh auto;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 4px 0 4px 0 grey;
+}
+#utente{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(51, 74, 190);
+    padding: 10px;
+    position: relative;
+}
+#cancella{
+    position: absolute;
+    right: 10px;
+    background-color: orange !important;
+}
+#utente>label{
+    color: white;
+    font-size: 22px;
+    
+}
+#utente>input{
+    width: 300px;
+    height: 30px;border: none;outline: none;text-align: center;
+    margin-top: 5px;
+}
+#utente>button{
+    border: none;outline: none;width: 100px;height: 30px;
+    padding:0 10px ;
+    background-color: rgb(152, 85, 219);
+    color: white;cursor: pointer;
+}
+
+
+/* fine section utente */
+
+
+main{
+    width: 100%;
+    height: calc(80vh - 80px);
+    display: flex; flex-direction: row;
+}
+.left{
+    width: 30%; height: 100%;overflow-y: auto;
+    border-right: 4px solid white;
+    position: relative;
+}
+.bravo{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(27, 133, 28);
+    position: absolute;top: 0;
+    padding: 10px;text-align: center;align-items: center;
+    color: white;
+    margin: 5%;
+}
+
+.si{
+    display: block;
+}
+.no{
+    display: none;
+}
+ul li{
+    position: relative;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(51, 74, 190);
+    margin: 5px 5%;display: flex;flex-direction: row;justify-content: center;align-items: center;color: white;
+}
+#fatto{
+position: absolute; right: 10px; cursor: pointer;
+}
+
+#nonFatto{
+    position: absolute; right: 40px; cursor: pointer;
+}
+#sospeso{
+    position: absolute;
+    right: 70px;
+}
+.left>h2{
+    text-align: center;
+    padding: 10px 0; letter-spacing: 2px;
+    color: #5d5d5d;
+    
+}
+
+.right{
+    width: 70%;height: 100%;
+    display: flex;flex-direction: row; flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: center;
+    gap: 8px;
+}
+.boxTodo{
+    width: calc(100% / 3 - 10px);
+    height: 90%;
+    margin-top:2.5%;
+    background-color: rgb(201, 201, 201);
+
+    
+}
+
+.titoloBox{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(152, 85, 219);
+    color: white;
+    line-height: 40PX;text-align: center;
+    font-size: 0.8em;
+}
+
+
+
+@media screen and (max-width: 640px) {
+    #utente{
+        height: 120px;
+    }
+    #cancella{
+        right: 24px;
+        top: 70px;
+    }
+    #utente>label{
+        font-size: 16px;
+
+    }
+    .left{
+        border: none;
+
+    }
+    #utente>input{
+        width: 200px;
+    }
+    main{
+        display: flex;flex-direction: column;
+        overflow-y: auto;
+    }
+    main>.left , main>.right{
+        width: 100%;
+    }
+  main>.right{
+     display:block;
+   }
+   .boxTodo{
+    width: 100%;
+    height: 200px;
+    background-color: yellow;
+   }
+
+}
+
+
+
+@media screen and (min-width :640px)  and (max-width:1200px)  {
+    #cancella{
+        top:40px;
+    }
+    main{
+        display: flex; flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        
+    }
+    .right{
+        width: 100%;
+        font-size: 0.6em;
+    }
+}
