@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="font2/css/all.css">
+    <title>LoginPage</title>
+</head>
+<body>
+    <div id="app">
+          <form @submit.prevent="login" action="dati.php" method="post">
+                   <div class="box">
+                    <i class="fa-solid fa-user-large"></i>
+                        <input type="text" v-model="username" placeholder="inserisci la tua user-name">
+                   </div>
+                   <div class="box">
+                    <i class="fa-solid fa-lock"></i>
+                            <input type="password" v-model="password" placeholder="inserisci la tua password">
+                   </div>
+
+                   <button type="submit">ACCEDI <i class="fa-solid fa-right-to-bracket" style="color: #4d4d4d;"></i></button>
+          </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
