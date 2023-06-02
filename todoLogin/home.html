@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="font2/css/all.css">
+    <title>home-page</title>
 </head>
 <body>
-    <h1>sei il benvenuto</h1>
+    <div id="app">
+      <div class="container">
+            <div class="application">
+                <nav class="navbar navbar-dark bg-dark">
+                    <div class="container-fluid">
+                      <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="add your task" v-model="newTask" aria-label="add your task">
+                        <button @click="aggiungi" type="button" style="width: 300px;" class="btn btn-success">Add your task</button> <button @click="elimina(index)" style="width: 200px;position: absolute; right: 10px;outline: none;" type="button" class="btn btn-outline-danger">Delete all task</button>
+                      </form>
+                    </div>
+                  </nav>
+                 <div class="containerTodo bg-dark">
+                       <section id="left">
+                           <h2>your tasks</h2>
+                           <ul>
+                            <li id="list"  v-for="(task,index) in lista"   style="background-color: white;color: #4d4d4d;">{{task}}<i @click="fatta(index)" id="si" class="fa-solid fa-check" style="color: #6de996;"></i><i @click="nonfatti(index)" id="no" class="fa-solid fa-xmark" style="color: #e70d0d;"></i></li>
+                           </ul>
+                           <div :class="(lista.length>0?'invisibile':'visibile')" class="messaggio">
+                              <h3>non hai task da completare</h3>
+                              <p>per aggiungere task vai nella barra di navigazione clicca in add your task e poi permi il bottone verde di fianco e cosi avrai aggiunto una task! </p>
+                           </div>
+                       </section>
+                       <section id="right">
+                             <div class="box fatti">
+                              <h2>task fatti</h2>
+                                  <ul>
+                                     <li v-for="(fatto, index) in fatti" style="background-color: white;">{{fatto}}</li>
+                                  </ul>
+                             </div>
+                             <div class="box nonFatti">
+                              <h2>task non conclusi</h2>
+                                  <ul>
+                                    <li v-for="(non, index) in nonFatti" style="background-color: white; color: #4d4d4d;">{{non}}</li>
+                                  </ul>
+                             </div>
+                             
+                       </section>
+                 </div>
+            </div>
+      </div>
+    </div>
+    <script src="home.js"></script>
 </body>
 </html>

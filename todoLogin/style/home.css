@@ -1,0 +1,109 @@
+*{
+    padding: 0;margin: 0;box-sizing: border-box;
+}
+#app{
+    width: 100%;height: 100vh; 
+
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+.application{
+    width: 100%;
+    height: 85vh;
+    margin-top:5vh;
+}
+.containerTodo{
+    width: 100%;
+    height: 79vh;
+    margin-top: 1vh;
+    display: flex;flex-direction: row;
+}
+#left{
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid #86fec6;
+}
+ul{
+    list-style: none;
+}
+li{
+    list-style:none;width: 100%;height: 40px;
+    margin-left: -20px;text-align: center;line-height: 40px;
+    margin-top: 10px;
+    position: relative;
+}
+#list>i{
+    position: absolute;
+    line-height: 45px;font-size: 1.3em; cursor: pointer;
+}
+#si{
+    right: 10px;
+}
+#no{
+    right: 45px;
+}
+h2{
+    color: #ffff; width: 100%;height: 40px;
+    background-color: rgb(19, 139, 87);text-align: center;
+}
+
+#right{
+    width: 70%;
+    height: 100%;
+    display: flex;flex-direction: row;flex-wrap: wrap;
+}
+.box{
+    width: calc(100% / 2 );
+    height: calc(100% ) ;
+    border: 1px solid lightgreen;
+    margin:0 auto;
+}
+.messaggio{
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    padding: 10px;background-color: white;
+}
+.messaggio h3{
+    color:  red;font-size: 1.5em;
+}
+.visibile{
+    display: block;
+}
+.invisibile{
+    display: none;
+}
+.box>li{
+    color: white;
+}
+
+@media screen and ( max-width: 640px) {
+    .containerTodo{
+        display: flex; flex-direction: column;overflow: auto;
+    }
+    button{
+        width: 80px !important; font-size: 0.5em !important;height: 40px !important;
+    }
+    input{
+        width: 150px !important;
+    }
+    #left{
+        width: 100%;
+        margin-top: 50px;
+
+        
+    }
+    #right{
+        width: 100%;overflow: auto;
+        
+    }
+    .box{
+        width: 100%;display: flex;flex-direction: column;
+        min-height: 400px;
+    }
+    
+}
